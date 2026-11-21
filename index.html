@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Banquete sob medida</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="hero"><div class="wrap">
+  <div><div class="eyebrow">Chef · Eventos</div><h1>Um banquete à sua <em>medida</em>.</h1>
+  <p>Monte o cardápio do seu evento passo a passo e veja o orçamento na hora, sem precisar de conversa.</p></div>
+  <div class="orbit" id="orbit"><div class="core"><div>A partir de<b>R$ 40</b>por pessoa</div></div></div>
+</div></div>
+<div class="mq" aria-hidden="true"><span id="mq"></span></div>
+<div class="wrap">
+<div class="prog" id="prog"></div>
+
+<section class="step"><h2>Evento para quantas pessoas?</h2><p class="q">Pode ser um número aproximado. A gente ajusta depois.</p>
+ <div class="scene"><svg class="chef" viewBox="0 0 100 130" aria-label="Cozinheiro"><path d="M22 130V98q0-16 16-18h24q16 2 16 18v32z" fill="#fff" stroke="#D9D2C0" stroke-width="2"/><path d="M76 98q16-4 16-26" stroke="#D9D2C0" stroke-width="10" stroke-linecap="round" fill="none"/><path d="M76 98q16-4 16-26" stroke="#fff" stroke-width="7" stroke-linecap="round" fill="none"/><circle cx="92" cy="70" r="5.5" fill="#F1C9A5"/><path d="M92 66V48" stroke="#8A6823" stroke-width="2.5" stroke-linecap="round"/><ellipse cx="92" cy="44" rx="6" ry="8" fill="#B08A3E"/><path d="M40 80l10 11 10-11z" fill="#B08A3E"/><circle cx="50" cy="104" r="2.4" fill="#B08A3E"/><circle cx="50" cy="116" r="2.4" fill="#B08A3E"/><circle cx="50" cy="60" r="19" fill="#F1C9A5"/><circle cx="43" cy="57" r="2" fill="#2B1B12"/><circle cx="57" cy="57" r="2" fill="#2B1B12"/><circle cx="39" cy="64" r="3.2" fill="#E9A08A" opacity=".6"/><circle cx="61" cy="64" r="3.2" fill="#E9A08A" opacity=".6"/><path d="M35 67q7-8 15-3q8-5 15 3q-7 4-15 0q-8 4-15 0z" fill="#3A2515"/><path d="M44 73q6 4 12 0" stroke="#8A3B2A" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="50" cy="19" r="14" fill="#fff" stroke="#D9D2C0" stroke-width="2"/><circle cx="34" cy="28" r="12" fill="#fff" stroke="#D9D2C0" stroke-width="2"/><circle cx="66" cy="28" r="12" fill="#fff" stroke="#D9D2C0" stroke-width="2"/><rect x="30" y="30" width="40" height="17" rx="3" fill="#fff" stroke="#D9D2C0" stroke-width="2"/><rect x="31.5" y="31.5" width="37" height="8" fill="#fff"/></svg><div class="crowd" id="crowd" role="img" aria-label="Convidados"></div></div>
+ <div class="stp"><button data-g="-1" aria-label="menos 1">−</button><input type="number" id="g" min="20" max="1000" value="100" inputmode="numeric" aria-label="Número de pessoas"><button data-g="1" aria-label="mais 1">+</button></div>
+ <div class="chips"><button data-set="30">30</button><button data-set="50">50</button><button data-set="100">100</button><button data-set="150">150</button><button data-set="200">200</button></div>
+ <p class="hint" id="gh"></p></section>
+
+<section class="step"><h2>Precisa de louça?</h2><p class="q">Pratos, talheres e copos para os convidados.</p>
+ <label class="opt"><input type="radio" name="louca" value="1"><h3>Sim, preciso</h3><small>A louça fica por nossa conta.</small></label>
+ <label class="opt"><input type="radio" name="louca" value="0"><h3>Não, já tenho</h3><small>O local ou você providencia.</small></label></section>
+
+<section class="step"><h2>Quer a equipe de garçons?</h2><p class="q">A equipe serve as mesas e cuida do salão durante o evento.</p>
+ <label class="opt"><input type="radio" name="eq" value="1"><h3>Sim, equipe completa <span class="chip">+ R$ 500</span></h3><small>Garçons no salão do começo ao fim.</small></label>
+ <label class="opt"><input type="radio" name="eq" value="0"><h3>Não, só o chef</h3><small>O chef cuida da cozinha.</small></label>
+ <div id="chefq" hidden><h2 style="font-size:24px;margin-top:26px">O chef só chega e faz os pratos, ou leva o material também?</h2>
+  <label class="opt"><input type="radio" name="chef" value="chega"><h3>Só chega e cozinha</h3><small>Os equipamentos e ingredientes já estão no local.</small></label>
+  <label class="opt"><input type="radio" name="chef" value="leva"><h3>Quero que leve o material</h3><small>Ele leva o que for preciso para o preparo.</small></label>
+  <p class="note">Esse caso tem muitas variáveis, então o chef conversa com você para fechar os detalhes. O valor final pode mudar.</p></div></section>
+
+<section class="step"><h2>Quanto tempo de evento?</h2><p class="q">Até 4 horas já está incluso no valor base.</p>
+ <div class="stp"><button data-h="-1" aria-label="menos uma hora">−</button><div class="hv" id="hv"></div><button data-h="1" aria-label="mais uma hora">+</button></div>
+ <p class="hint">Cada hora a mais após as 4 horas tem um adicional de R$ 150.</p>
+ <p class="hint joke" id="hj" hidden>Quer assinar minha carteira?</p>
+ <button type="button" class="btn" id="hok">Confirmar</button>
+ <p class="hint">Confirme a duração para poder enviar o pedido.</p></section>
+
+<section class="step"><h2>Qual buffet?</h2><p class="q">Escolha um cardápio pronto ou monte o seu.</p>
+ <div id="buf"></div>
+ <div id="custom" hidden></div></section>
+
+<section class="step"><h2>Seu orçamento</h2><p class="q">Confira tudo e envie para o chef.</p>
+ <div class="card" style="margin-top:0"><ul class="sum" id="sum"></ul></div>
+ <div class="card"><h2 style="margin:0 0 4px;font-size:24px">Últimos detalhes</h2>
+  <div class="row"><label class="field"><span>Seu nome</span><input type="text" id="name" placeholder="Como posso te chamar?"></label>
+  <label class="field"><span>Data do evento</span><input type="date" id="date"></label></div>
+  <label class="field"><span>Local (cidade e bairro)</span><input type="text" id="place" placeholder="Ex.: Salão Primavera, Centro"></label>
+  <label class="field"><span>Distância do local</span><select id="region"><option value="0">Na cidade (sem taxa)</option><option value="150">Até 30 km (R$ 150)</option><option value="300">De 30 a 80 km (R$ 300)</option><option value="500">Acima de 80 km (R$ 500)</option></select></label></div>
+ <div class="miss" id="miss" hidden></div>
+ <a class="btn" id="send" href="#" target="_blank" rel="noopener">Enviar pedido pelo WhatsApp</a>
+ <p class="note">Valores de exemplo para teste. O orçamento é uma estimativa e será confirmado após o envio.</p></section>
+
+<div class="nav"><button class="ghost" id="back">Voltar</button><button class="btn" id="next">Continuar</button></div>
+</div>
+<div class="bar"><div><span><small>Total estimado</small><strong id="barTotal">R$ 0</strong></span><span class="st" id="st"></span></div></div>
+<script src="script.js"></script>
+</body>
+</html>
