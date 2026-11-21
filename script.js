@@ -1,4 +1,4 @@
-const WHATS="5500000000000"; // troque pelo seu número com DDI e DDD
+const WHATS="+5591982755053"; // troque pelo seu número com DDI e DDD
 const $=id=>document.getElementById(id);
 const brl=n=>n.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
 const d=(p,c,r=3)=>p.map(([x,y])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}"/>`).join("");
